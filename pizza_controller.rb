@@ -21,10 +21,18 @@ post '/pizzas' do
 end
 
 #SHOW
+get '/pizzas/:id' do
+  @pizza = Pizza.find(params[:id])
+  erb(:show)
+end
 
 #EDIT
 
 #UPDATE
+post '/pizzas/:id' do
+  Pizza.new(params).update
+  redirect to '.pizzas'
+end
 
 #DESTROY
 
