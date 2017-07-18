@@ -1,0 +1,7 @@
+<h1>Hello there, your pizza has been ordered</h1>
+<p>Name: <%= @pizza.pretty_name %> </p>
+<p>Order: <%= @pizza.quantity %> x <%= @pizza.topping %> </p>
+<p>Please let us know if it does not arrive...and if you want to change your order, please fill out the form below.</p>
+
+<a href="/pizzas/<%= @pizza.id %>/edit">Edit Order Here</a>
+

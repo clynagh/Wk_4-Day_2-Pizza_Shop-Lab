@@ -1,13 +1,14 @@
-<h1>Form to be completed?</h1>
+<h1>Edit pizza order..</h1>
 
+<p></p>
 
-<form method="post" action="/pizzas">
+<form method="post" action="/pizzas/<%= @pizza.id %>">
   <label for="first-name">First Name:</label>
-    <input id="first-name" type="text" name="first_name"/>
+    <input id="first-name" type="text" name="first_name" value="<%= @pizza.first_name %>"/>
   
 
   <label for="last-name">Last Name:</label>
-    <input id="last-name" type="text" name="last_name">
+    <input id="last-name" type="text" name="last_name" value="<%= @pizza.last_name %>">
   
 
   <label for="pizza-select">Select a pizza:</label>
@@ -23,4 +24,6 @@
 
   <input type='submit' value="Order Pizza"/>
 </form>
+
+
 

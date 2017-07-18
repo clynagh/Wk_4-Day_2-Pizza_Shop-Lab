@@ -14,25 +14,35 @@ get '/pizzas/new' do
   erb(:new)
 end
 
-#CREATE
-post '/pizzas' do
-  pizza = Pizza.new(params)
-  pizza.save
-end
-
 #SHOW
 get '/pizzas/:id' do
   @pizza = Pizza.find(params[:id])
   erb(:show)
 end
 
-#EDIT
-
-#UPDATE
-post '/pizzas/:id' do
-  Pizza.new(params).update
-  redirect to '.pizzas'
+#CREATE
+post '/pizzas' do
+  pizza = Pizza.new(params)
+  pizza.save
+  redirect to "/pizzas/#{pizza.id}"
 end
 
-#DESTROY
+#EDIT
+get '/pizzas/:id/edit' do
+  @pizza = Pizza.find(params[:id])
+  erb(:edit)
+end
+
+
+# UPDATE
+post '/pizzas/:id' do
+  Pizza.new(params).update
+  redirect to '/pizzas'
+end
+
+# #DESTROY
+# post '/pizzas/:id/delete' do
+
+
+# end
 
