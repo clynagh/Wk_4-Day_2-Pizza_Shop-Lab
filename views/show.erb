@@ -1,7 +1,11 @@
-<h1>Hello there, your pizza has been ordered</h1>
+<h1>Thank you for your order!</h1>
 <p>Name: <%= @pizza.pretty_name %> </p>
 <p>Order: <%= @pizza.quantity %> x <%= @pizza.topping %> </p>
-<p>Please let us know if it does not arrive...and if you want to change your order, please fill out the form below.</p>
+<p>Please enjoy your pizza, if you want to make any changes to your order, please fill out the form below.</p>
 
-<a href="/pizzas/<%= @pizza.id %>/edit">Edit Order Here</a>
+<a href="/pizzas/<%= @pizza.id %>/edit">Have you changed your mind? Edit your order here.</a>
+<p>Decided you are not hungry? Delete your order with a touch of a button.</p>
+<form method="post" action="/pizzas/<%= @pizza.id %>/delete">
+  <input type="submit" value="Delete Order"/>
+</form>
 

@@ -33,7 +33,6 @@ get '/pizzas/:id/edit' do
   erb(:edit)
 end
 
-
 # UPDATE
 post '/pizzas/:id' do
   Pizza.new(params).update
@@ -41,8 +40,9 @@ post '/pizzas/:id' do
 end
 
 # #DESTROY
-# post '/pizzas/:id/delete' do
-
-
-# end
+post '/pizzas/:id/delete' do
+  pizza = Pizza.find( params[:id] )
+  pizza.delete()
+  redirect to '/pizzas'
+end
 
